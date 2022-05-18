@@ -7,11 +7,12 @@ export default function Home() {
 
   async function getTrending() {
     let url = process.env.REACT_APP_SERVER;
-    console.log("1,url", url);
+   // console.log("1,url", url);
     let response = await fetch(`${url}/trending`);
-     console.log("2,response", response);
+    // console.log("2,response", response);
 
-    let trendingData = await response.json();
+    //let trendingData = await response.json();
+    let trendingData= await response.json();
      console.log("3,trendingData", trendingData);
     setTrending(trendingData);
   // console.log("states",recipes);
@@ -19,6 +20,7 @@ export default function Home() {
 
   useEffect(() => {
     getTrending();
+    console.log("states",trending)
   }, []);
 
 
